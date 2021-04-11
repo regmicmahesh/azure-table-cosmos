@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="flex-right">
+  <h1>All todos</h1>
+  {% for todo in todos %}
+  <div class="todo">
+    <h4>
+      <a href="/delete/{{todo.id}}" class="completed-button">x </a>
+      {{todo.title}} {% if not todo.completed %}
+      <a href="/completed/{{todo.id}}" class="completed-button">✓</a>
+      {% endif %}
+    </h4>
+    <p>{{todo.description}}</p>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
+
+
+{% block footer %}
+        <footer>Looking for Table Storage? <a href="/table/">Click here</a></footer>
+{% endblock footer %}

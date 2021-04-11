@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .container {
+        padding: 5em;
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+      }
+      .flex-left {
+        flex: 0.5;
+      }
+      .flex-right {
+        flex: 0.5;
+        padding-left: 30px;
+      }
+      input,
+      textarea {
+        font-size: 1.1em;
+        padding: 0.3em;
+        width: 100%;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .todo {
+        padding: 30px 0px;
+      }
+      h1#add {
+        margin-bottom: 30px;
+      }
+      .completed-button {
+        font-size: 30px;
+        margin: 0 15px;
+        display: block;
+        text-decoration: none;
+        float: right;
+      }
+      .todo {
+        width: 20vw;
+      }
+      footer {
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="flex-left">
+        <h1 id="add">Add Todo</h1>
+        <form method="POST">
+          {% csrf_token %}
+          <div>
+            <label for="title">Title</label>
+            <br />
+            <input type="text" name="title" id="title" />
+          </div>
+          <div>
+            <label for="description">Description</label>
+            <br />
+            <textarea
+              name="description"
+              id="description"
+              cols="30"
+              rows="10"
+            ></textarea>
+          </div>
+          <input type="submit" value="Add" />
+        </form>
+        {% block footer %}{% endblock footer %}
+      </div>
+      {% block content %}
+      {% endblock content %}
+     
+    </div>
+  </body>
+</html>
