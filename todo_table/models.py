@@ -2,7 +2,7 @@ from azure.cosmosdb.table.tableservice import TableService
 from azure.cosmosdb.table.models import Entity
 from uuid import uuid4
 
-KEY = "Yfk09rYCg/jQ28U0g7TfVyayPPShzO1c9FhOpaJ+wOqUqhTkR2Xi8D65CwLd4WmQcS+55i0fnH1CiTibdW3KYw=="
+KEY = "#"
 PARTITION_KEY = "todo"
 
 

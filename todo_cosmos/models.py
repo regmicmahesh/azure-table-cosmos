@@ -3,8 +3,8 @@ from uuid import uuid4
 
 from azure.cosmos import CosmosClient, PartitionKey, ContainerProxy
 
-ENDPOINT = "https://mcr-db.documents.azure.com:443/"
-KEY = "HnABH7uI8ljbMkaO5W6TQm589WNUe9byGiLRDIxQJ6ahFnkRU2FCFgIl7zkEr9lBFj6dPEipPBG4i0eQYuMgUw=="
+ENDPOINT = "#"
+KEY = "#"
 
 
 db = None
